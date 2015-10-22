@@ -12,10 +12,10 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField 'String', 'TWITTER_CONSUMER_KEY', "\"${twitterConsumerKey}\""
-        buildConfigField 'String', 'TWITTER_CONSUMER_SECRET', "\"${twitterConsumerSecret}\""
-        buildConfigField 'String', 'TWITTER_ACCESS_KEY', "\"${twitterAccessKey}\""
-        buildConfigField 'String', 'TWITTER_ACCESS_SECRET', "\"${twitterAccessSecret}\""
+        buildConfigField 'String', 'TWITTER_CONSUMER_KEY', "\"SpgivKa5xjjnMLuJIL3w\""
+        buildConfigField 'String', 'TWITTER_CONSUMER_SECRET', "\"EMy5OAJba2RTdv5fG90SSc1ICOVyTCai7aUcQjDmuDw\""
+        buildConfigField 'String', 'TWITTER_ACCESS_KEY', "\"61918376-fj0ehp6OAIKCjV5z32JazCYDptCm6eWvTrFo2u2pt\""
+        buildConfigField 'String', 'TWITTER_ACCESS_SECRET', "\"smZvdvK4lnx2rBkei3I6dmwjb4yxvQPvbZD8eo4GUcXeD\""
     }
     buildTypes {
         release {

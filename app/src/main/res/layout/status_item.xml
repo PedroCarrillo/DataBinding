@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <data>
-
-    <import type="android.view.View" />
-
     <variable
       name="status"
       type="com.stylingandroid.databinding.data.Status" />
@@ -14,7 +12,7 @@
   <RelativeLayout
     android:id="@+id/status_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
       android:id="@+id/status_avatar"
@@ -24,7 +22,8 @@
       android:layout_alignParentStart="true"
       android:layout_alignParentTop="true"
       android:layout_margin="8dip"
-      android:contentDescription="@null" />
+      android:contentDescription="@null"
+      app:imageUrl="@{status.imageUrl}"  />
 
     <TextView
       android:id="@+id/status_name"
@@ -47,6 +46,7 @@
       android:layout_marginStart="4dip"
       android:layout_toEndOf="@id/status_name"
       android:layout_toRightOf="@id/status_name"
+        android:visibility="@{status < 13 ? View.GONE : View.VISIBLE}"
       android:text="@{&quot;@&quot; + status.screenName}" />
 
     <TextView
@@ -59,9 +59,29 @@
       android:layout_alignParentRight="true"
       android:layout_alignStart="@id/status_name"
       android:layout_below="@id/status_name"
-      android:maxLines="2"
       android:singleLine="false"
       android:text="@{status.text}" />
+
+    <RelativeLayout
+        android:id="@+id/status_quoted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/status_text"
+        android:layout_alignStart="@id/status_text"
+        android:layout_below="@id/status_text"
+        android:layout_marginTop="8dp"
+        android:background="#f3f3f3"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/quoted_tap"
+            style="@style/Status.Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"/>
+    </RelativeLayout>
 
   </RelativeLayout>
 </layout>
